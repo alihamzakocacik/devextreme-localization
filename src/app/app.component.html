@@ -1,0 +1,29 @@
+<div id="data-grid-demo">
+  <dx-scheduler
+    timeZone="America/Los_Angeles"
+    [dataSource]="appointmentsData"
+    [views]='["day", "week", "workWeek", "month"]'
+    currentView="day"
+    [currentDate]="currentDate"
+    [startDayHour]="9"
+    [height]="600"
+  >
+  </dx-scheduler>
+
+  <div class="options">
+    <div class="caption">Options</div>
+    <div class="option">
+      <label for="selectInput">Language</label>
+      <dx-select-box
+        id="selectBox"
+        [dataSource]="locales"
+        displayExpr="Name"
+        valueExpr="Value"
+        [value]="locale"
+        (onValueChanged)="changeLocale($event)"
+        [inputAttr]="{id: 'selectInput'}"
+      >
+      </dx-select-box>
+    </div>
+  </div>
+</div>
